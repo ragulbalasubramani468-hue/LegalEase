@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalEase — AI Legal Document Studio</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">L</div><div><b>LegalEase</b><span>Legal Document Studio</span></div></div>
+  <div class="top-actions"><span class="secure">● Secure workspace</span><button class="outline" id="newBtn">New document</button></div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">GENERATIVE LEGAL WORKSPACE</div>
+      <h1>Draft professional documents,<br><em>without the blank page.</em></h1>
+      <p>Choose a template, add your terms, preview the result, and export a polished document in seconds.</p>
+    </div>
+    <div class="hero-card"><div class="spark">✦</div><b>AI-assisted drafting</b><span>Structured clauses, key terms and editable output.</span></div>
+  </section>
+
+  <div class="layout">
+    <aside class="panel left">
+      <div class="panel-head"><div><span class="eyebrow">01 · START</span><h2>Document setup</h2></div></div>
+      <label>Document type</label>
+      <div class="template-grid" id="templateGrid"></div>
+      <div class="divider"></div>
+      <label>Document title</label>
+      <input id="title" placeholder="e.g. Employment Agreement">
+      <div id="fields"></div>
+      <label>Additional terms</label>
+      <textarea id="extraTerms" rows="4" placeholder="Add any special requirements..."></textarea>
+      <div class="divider"></div>
+      <div class="panel-head small"><div><span class="eyebrow">BRANDING</span><h3>Document identity</h3></div></div>
+      <label>Brand / company name</label><input id="brandName" value="LegalEase">
+      <label>Logo URL <small>(optional)</small></label><input id="logoUrl" placeholder="https://...">
+      <label>Font</label>
+      <select id="font"><option>Helvetica</option><option>Times-Roman</option><option>Courier</option></select>
+      <button class="primary" id="generateBtn">Generate document <span>→</span></button>
+      <div class="legal-note">LegalEase creates drafts for productivity and information. Review documents with a qualified legal professional before relying on them.</div>
+    </aside>
+
+    <section class="panel center">
+      <div class="panel-head">
+        <div><span class="eyebrow">02 · PREVIEW</span><h2>Editable preview</h2></div>
+        <div class="actions"><button class="icon-btn" id="copyBtn">Copy</button><button class="icon-btn" id="printBtn">Print</button></div>
+      </div>
+      <div class="paper-wrap"><article class="paper" id="preview" contenteditable="true">
+        <div class="empty"><div class="empty-icon">✦</div><h3>Your document will appear here</h3><p>Select a template and generate a draft.</p></div>
+      </article></div>
+    </section>
+
+    <aside class="panel right">
+      <div class="panel-head"><div><span class="eyebrow">03 · DETAILS</span><h2>Key terms</h2></div></div>
+      <div id="terms" class="terms-empty">Generate a document to see its key terms.</div>
+      <div class="export-box">
+        <div><b>Export document</b><span>Keep your editable copy</span></div>
+        <div class="export-buttons">
+          <button id="pdfBtn" disabled>PDF</button><button id="docxBtn" disabled>DOCX</button><button id="txtBtn" disabled>TXT</button>
+        </div>
+      </div>
+      <div class="tips"><b>Drafting tips</b><ul><li>Use exact legal names for parties.</li><li>Check dates, amounts and notice periods.</li><li>Add transaction-specific terms before export.</li></ul></div>
+    </aside>
+  </div>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
